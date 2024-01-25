@@ -8,7 +8,7 @@
 import UIKit
 
 
-class MessageReversedCollectionViewCell: UICollectionViewCell, Rounded {
+class MessageReversedCollectionViewCell: UICollectionViewCell, RoundedBgCollectionViewCell {
     @IBOutlet private weak var vwBack: UIView!
     @IBOutlet private weak var lblText: UILabel!
     

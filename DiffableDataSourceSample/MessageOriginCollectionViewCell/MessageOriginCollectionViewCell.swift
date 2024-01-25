@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MessageOriginCollectionViewCell: UICollectionViewCell, Rounded {
+class MessageOriginCollectionViewCell: UICollectionViewCell, RoundedBgCollectionViewCell {
     @IBOutlet private weak var vwBack: UIView!
     @IBOutlet private weak var lblText: UILabel!
     

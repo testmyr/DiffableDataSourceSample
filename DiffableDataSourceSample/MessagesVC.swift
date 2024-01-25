@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol Rounded: UICollectionViewCell {
+protocol RoundedBgCollectionViewCell: UICollectionViewCell {
     func setRounded()
     func setText(_ text: String)
 }
@@ -100,9 +100,8 @@ class MessagesVC: UIViewController {
             (cell as? MessageReversedCollectionViewCell)?.setText(item.text)
         }
         return UICollectionViewDiffableDataSource<Section, MessageItem>(collectionView: self.clVwMessages) { collectionView, indexPath, item in
-            let isOwn = item.owner == .own
-            let cell = collectionView.dequeueConfiguredReusableCell(using: isOwn ? cellMessageOriginRegistration : cellMessageRevertedRegistration, for: indexPath, item: item)
-            (cell as? Rounded)?.setText(item.text)
+            let cell = collectionView.dequeueConfiguredReusableCell(using: item.owner.isOwn ? cellMessageOriginRegistration : cellMessageRevertedRegistration, for: indexPath, item: item)
+            (cell as? RoundedBgCollectionViewCell)?.setText(item.text)
             DispatchQueue.main.async {
                 cell.setNeedsLayout()
             }

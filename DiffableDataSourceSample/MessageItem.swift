@@ -9,6 +9,8 @@ import UIKit
 
 enum Owner {
     case own, generated
+    
+    var isOwn: Bool { self == .own }
 }
 
 struct MessageItem: Hashable {
