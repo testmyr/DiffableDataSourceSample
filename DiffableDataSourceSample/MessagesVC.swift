@@ -34,8 +34,6 @@ class MessagesVC: UIViewController {
     @IBOutlet weak var txtFldMessage: UITextField!
     @IBOutlet private weak var cnstrStckVwBottom: NSLayoutConstraint!
     @IBOutlet private weak var clVwMessages: UICollectionView!
-    private static let collectionViewCellReuseIdentifierOrigin = "MessageOriginCollectionViewCell"
-    private static let collectionViewCellReuseIdentifierReversed = "MessageReversedCollectionViewCell"
     
     private var keyboardHeight = CGFloat(0)
     private var isKeyboardShown = false
@@ -93,11 +91,11 @@ class MessagesVC: UIViewController {
     }
     
     private func configureDataSource() -> UICollectionViewDiffableDataSource<Section, MessageItem> {
-        let cellMessageOriginNib = UINib(nibName: Self.collectionViewCellReuseIdentifierOrigin, bundle: nil)
-        let cellMessageOriginRegistration = UICollectionView.CellRegistration(cellNib: cellMessageOriginNib) { (cell, indexPath, item: MessageItem) in
+        let cellMessageOriginNib = UINib(nibName: "MessageOriginCollectionViewCell", bundle: nil)
+        let cellMessageOriginRegistration = UICollectionView.CellRegistration(cellNib: cellMessageOriginNib.self) { (cell, indexPath, item: MessageItem) in
             (cell as? MessageOriginCollectionViewCell)?.setText(item.text)
         }
-        let cellMessageRevertedNib = UINib(nibName: Self.collectionViewCellReuseIdentifierReversed, bundle: nil)
+        let cellMessageRevertedNib = UINib(nibName: "MessageReversedCollectionViewCell", bundle: nil)
         let cellMessageRevertedRegistration = UICollectionView.CellRegistration(cellNib: cellMessageRevertedNib) { (cell, indexPath, item: MessageItem) in
             (cell as? MessageReversedCollectionViewCell)?.setText(item.text)
         }
