@@ -17,25 +17,17 @@ class MessageReversedCollectionViewCell: UICollectionViewCell, Rounded {
         contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
     }
     
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         setRounded()
-        
     }
+    
     func setText(_ text: String) {
         lblText?.text = text
     }
     
     func setRounded() {
-        vwBack.backgroundColor=UIColor.white
+        vwBack.backgroundColor = .white
         let path = UIBezierPath(roundedRect:vwBack.bounds, byRoundingCorners:[.topLeft, .topRight, .bottomRight], cornerRadii: CGSizeMake(16, 16))
         let maskLayer = CAShapeLayer()
         maskLayer.frame = vwBack.bounds;

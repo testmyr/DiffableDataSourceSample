@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MessagesVC.swift
 //  DiffableDataSourceSample
 //
 //  Created by sdk on 23.01.2024.
@@ -70,11 +70,11 @@ class MessagesVC: UIViewController {
         if let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyBoardFrame = self.view.convert(keyboardRect, from: nil)
             keyboardHeight = keyBoardFrame.size.height
-            showBottomView()
+            raiseСontentUpByKeyboardHeight()
         }
     }
     @objc func keyboardWillHide(notification: NSNotification) {
-        hideBottomView()
+        lowerСontentByKeyboardHeight()
     }
     
     @objc func sendMessage() {
@@ -131,7 +131,7 @@ class MessagesVC: UIViewController {
         return UICollectionViewCompositionalLayout(section: section)
     }
     
-    private func showBottomView() {
+    private func raiseСontentUpByKeyboardHeight() {
         UIView.animate(withDuration: 0.5, animations: {
             self.cnstrStckVwBottom.constant = self.keyboardHeight
             self.view.layoutIfNeeded()
@@ -139,7 +139,7 @@ class MessagesVC: UIViewController {
             self.isKeyboardShown = true
         }
     }
-    private func hideBottomView() {
+    private func lowerСontentByKeyboardHeight() {
         if self.cnstrStckVwBottom.constant != 0 {
             self.isKeyboardShown = false
             UIView.animate(withDuration: 0.5, animations: {
@@ -157,7 +157,7 @@ extension MessagesVC: UICollectionViewDelegate {
         if isKeyboardShown && scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0 {
             print(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y)
             self.view.endEditing(true)
-            hideBottomView()
+            lowerСontentByKeyboardHeight()
         }
     }
 }

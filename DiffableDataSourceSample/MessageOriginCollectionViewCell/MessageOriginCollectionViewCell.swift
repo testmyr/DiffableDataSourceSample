@@ -19,14 +19,14 @@ class MessageOriginCollectionViewCell: UICollectionViewCell, Rounded {
     override func layoutSubviews() {
         super.layoutSubviews()
         setRounded()
-        
     }
+    
     func setText(_ text: String) {
         lblText.text = text
     }
     
     func setRounded() {
-        vwBack.backgroundColor=UIColor.black
+        vwBack.backgroundColor = .black
         let path = UIBezierPath(roundedRect:vwBack.bounds, byRoundingCorners:[.topLeft, .topRight, .bottomLeft], cornerRadii: CGSizeMake(16, 16))
         let maskLayer = CAShapeLayer()
         maskLayer.frame = vwBack.bounds;
