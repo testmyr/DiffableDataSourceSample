@@ -44,11 +44,11 @@ Dsfdsfdsfdsf</string>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydy-yj-zU8">
                                 <rect key="frame" x="169.66666666666666" y="0.0" width="73.333333333333343" height="132"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="jMo-ki-TGd"/>
-                                </constraints>
                             </view>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Ydy-yj-zU8" firstAttribute="width" relation="greaterThanOrEqual" secondItem="LxS-cQ-IUu" secondAttribute="width" multiplier="0.1" id="mZl-E9-Jnq"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>

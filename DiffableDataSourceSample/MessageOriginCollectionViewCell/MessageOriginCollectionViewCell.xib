@@ -20,17 +20,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="287" height="97"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kvf-as-B9B">
-                                <rect key="frame" x="0.0" y="0.0" width="221.66666666666666" height="97"/>
+                                <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="97"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="yg8-gs-ddf"/>
-                                </constraints>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-qg-Shc">
-                                <rect key="frame" x="221.66666666666666" y="0.0" width="65.333333333333343" height="97"/>
+                                <rect key="frame" x="57.333333333333329" y="0.0" width="229.66666666666669" height="97"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYI-x0-Pgu">
-                                        <rect key="frame" x="10.000000000000004" y="10" width="47.333333333333343" height="79"/>
+                                        <rect key="frame" x="9.9999999999999858" y="10" width="211.66666666666663" height="79"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -45,6 +42,9 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="kvf-as-B9B" firstAttribute="width" relation="greaterThanOrEqual" secondItem="4Wy-aN-nSG" secondAttribute="width" multiplier="0.1" id="qjm-eh-J1c"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
